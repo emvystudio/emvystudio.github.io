@@ -989,6 +989,11 @@ section a:hover{
       font-size: 3em;
     }
 
+    .p-sub-title  {
+      font-size: 1.5em;
+    }
+      
+    
     .p-nav{
       flex-direction: column;
     }
