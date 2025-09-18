@@ -979,8 +979,7 @@ section a:hover{
     .hero{
     order: -1;
     }
-
-
+    
     .mobile{
       display: inline;
     }
@@ -994,7 +993,6 @@ section a:hover{
       font-weight: bold;
       text-transform: uppercase;
     }
-      
     
     .p-nav{
       flex-direction: column;
