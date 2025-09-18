@@ -991,6 +991,8 @@ section a:hover{
 
     .p-sub-title  {
       font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
     }
       
     
