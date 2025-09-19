@@ -196,6 +196,12 @@ iframe  {
   flex-wrap: wrap;
 }
 
+.subtitle {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 /*custom ids*/
 
 .bracket-adjust  {
@@ -986,12 +992,6 @@ section a:hover{
 
     .p-title  {
       font-size: 3em;
-    }
-
-    .p-subtitle {
-      font-size: 2em;
-      font-weight: bold;
-      text-transform: uppercase;
     }
     
     .p-nav{
