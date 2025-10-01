@@ -380,6 +380,7 @@ a.portfolio:hover .body {
     max-height: auto;
     z-index: 4;
     margin: 90vh 0 0 36%;
+    padding: 2vh 0;
     align-content: center;
     backdrop-filter:  blur(8px);
     -webkit-backdrop-filter:  blur(8px);
@@ -390,12 +391,26 @@ a.portfolio:hover .body {
   -webkit-transition: .3s;
   transition: .3s;
   max-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  
 }
 
 .piece:hover {
   background-color: whitesmoke;
+
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+.stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh;
+  padding: 0 0 0 0;
 }
 
 .box{
@@ -480,50 +495,44 @@ embed  {
       text-transform: uppercase;
       font-size: 1rem;
       font-weight: normal;
-      text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+   /*   text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; */
       border-radius: 30px;
       padding: 1rem;
       margin: 1rem .25rem;
-    }
+      color: rgb(255, 255, 255);
+  background-color: rgb(187, 187, 187);
+}
 
 .tag-color-red {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(255,123,123,1);
+  background-color: rgb(176, 7, 7);
 }
 
 .tag-color-green {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(123,255,123,1);
+  background-color: rgb(113, 185, 113);
 }
 
 .tag-color-blue {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(123,123,255,1);
+  background-color: rgb(53, 53, 140);
 }
 
 .tag-color-cyan {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(111,222,222,1);
+  background-color: rgb(57, 147, 147);
 }
 
 .tag-color-magenta {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(255,0,255,1);
+  background-color: rgb(131, 63, 131);
 }
 
 .tag-color-yellow {
-  color: rgba(255,255,255,0.9);
-  background-color: rgba(222,222,100,1);
+  background-color: rgb(182, 182, 77);
 }
 
 .tag-color-purple {
-  color: rgba(255,255,255,0.9);
   background-color: rgba(155,0,155,1);
 }
 
 .tag-color-orange {
-  color: rgba(255,255,255,0.9);
-  background-color: rgb(255, 94, 0);
+  background-color: rgb(208, 84, 16);
 }
 
 
