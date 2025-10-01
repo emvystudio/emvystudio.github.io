@@ -60,10 +60,18 @@ h1  {
 }
 
 h2  {
-  font-size: 2.25em;
-  line-height: 1em;
+  display: flex;
+  font-size: 5em;
+  font-weight: bold;
+  margin: 10px 0px;
+  color: rgba(10, 10, 10, 1);
+}
+
+h3  {
+  font-size: 2em;
+  font-weight: bold;
   text-transform: uppercase;
-  margin: 1rem 0;
+  color: rgba(10, 10, 10, 1);
 }
 
 @media (min-width:1600px) {
@@ -196,11 +204,6 @@ iframe  {
   flex-wrap: wrap;
 }
 
-.subtitle {
-  font-size: 2em;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
 /*custom ids*/
 
@@ -388,20 +391,22 @@ a.portfolio:hover .body {
 
 .piece  {
   padding: 6vh 4vw;
-  -webkit-transition: .3s;
-  transition: .3s;
   max-width: 100vw;
+  background: none;
   background-size: cover;
   background-position: center;
-  transition: background-image 0.5s ease-in-out;
-  
+  background-image: none;
 }
 
 .piece:hover {
-  background-color: whitesmoke;
+  transition: background-image .0s;
+ 
+}
 
-  -webkit-transition: .3s;
-  transition: .3s;
+.piece:hover h2, .piece:hover h3 {
+  transition: .0s;
+  -webkit-transition: .0s;
+  color: white;
 }
 
 .stub {
