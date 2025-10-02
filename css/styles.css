@@ -68,7 +68,7 @@ h2  {
 }
 
 h3  {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
   color: rgba(10, 10, 10, 1);
@@ -557,6 +557,7 @@ img {
 
 .small  {
   margin: -25% -10% 0 -3%;
+  text-align: right;
 }
 
 .right {
