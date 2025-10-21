@@ -39,4 +39,11 @@ document.querySelectorAll('.piece').forEach(piece => {
         clearTimeout(startTimeout);
         piece.style.backgroundImage = "none";
     });
+
+//trying to add a program that slides the white of the background  to grey as the user scrolls
+    window.addEventListener("scroll", () => {
+        let scrollPosition = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        document.documentElement.style.setProperty("--background-color", `rgba(${0}, ${0}, ${0}, ${scrollPosition * .01})`);
+    });
+
 });
