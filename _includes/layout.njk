@@ -2,17 +2,11 @@
 <html lang="en">
 
 {% include "head.njk" %}
-
-<body>
-    <nav>
-    </nav>
-    <div class="panel">
-    </div>
-    
-    <wrapper> 
+   
+    <body> 
+       {{ content | safe }}
        
-    </wrapper>        
-     
+    </body>
+    
     {% include "scripts.njk" %}  
-</body>
 </html>

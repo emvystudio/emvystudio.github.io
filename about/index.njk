@@ -16,9 +16,13 @@ title: About
       </a>
     </nav>
     
-    <div class="panel">
-        {% include "contact-ext.njk" %}
-        {% include "bio.njk" %}
+    <div class="panel pos-relative">
+       <div class="header">       
+            {% include "header.njk" %}
+            {% include "contact.njk" %}
+            {% include "contact-itch.njk" %}
+            {% include "bio.njk" %}
+        </div>
+        
         {% include "footer.njk" %}
     </div>
-
