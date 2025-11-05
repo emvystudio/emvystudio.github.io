@@ -60,7 +60,7 @@ h1  {
 
 h2  {
   display: flex;
-  font-size: 5em;
+  font-size: clamp(2rem, -0.875rem + 81.333vw, 5rem);
   font-weight: bold;
   margin: 10px 0px;
   color: rgba(10, 10, 10, 1);
@@ -363,11 +363,12 @@ a.portfolio:hover .body {
   {
   margin: auto 0;
   /*padding: 44px 0px;*/
-  /*display: flex;*/
+  display: flex;
   flex-direction: column;
   /*flex-grow: 3;*/
   justify-content: center;
-  }
+    gap: .25rem;
+}
 
 footer  {
   text-align: left;
@@ -533,7 +534,7 @@ embed  {
    /*   text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; */
       border-radius: 30px;
       padding: 1rem;
-      margin: .5rem 0;
+      margin: .25rem 0;
       color: rgb(255, 255, 255);
   background-color: rgb(187, 187, 187);
 }
@@ -763,7 +764,7 @@ section a:hover{
     max-height: auto;
     z-index: 4;
     padding: 0;
-    margin: 88vh 0 0 0;
+    top:95vh;
     align-content: center;
     backdrop-filter:  blur(8px);
     -webkit-backdrop-filter:  blur(8px);
@@ -843,13 +844,13 @@ section a:hover{
   {
     display: flex;
     flex-direction: column;
-    position:sticky;
+    position: relative;
     top: 0;
     gap: 2em;
     padding: 10vh 3vw 10vh 5vw;
     background-color: white;
     z-index: 5;
-    height: 100vh;
+    /*height: 100vh;*/
   }
 
 #projects-nav
@@ -864,7 +865,7 @@ section a:hover{
 .p-nav
   { 
     z-index: 6;
-    position: relative;
+    position: sticky;
     display: flex;
     flex-direction: row;
     gap: 3em;

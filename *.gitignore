@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock*.json
+
+# Build output
+_site/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.log
+*.tmp

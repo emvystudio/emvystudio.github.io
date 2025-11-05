@@ -1,0 +1,17 @@
+---
+layout: templates/layout.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter: ["all", "nav", "post"]
+permalink: "tags/{{ tag | slug }}/index.html"
+---
+
+<h1>Projects tagged {{ tag }}</h1>
+
+<ul>
+  {% for item in collections[tag] %}
+    <li><a href="{{ item.url }}">{{ item.data.title }}</a></li>
+  {% endfor %}
+</ul>
