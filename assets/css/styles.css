@@ -62,6 +62,7 @@ h2  {
   display: flex;
   font-size: clamp(2rem, -0.875rem + 81.333vw, 5rem);
   font-weight: bold;
+    line-height: 4rem;
   margin: 10px 0px;
   color: rgba(10, 10, 10, 1);
 }
@@ -273,6 +274,9 @@ a.portfolio:hover .body {
     animation: bodycolor 1s infinite alternate;
   }
   
+.categories {
+    margin: 1vmax;
+}
 
 @-webkit-keyframes bodycolor {
   0% {

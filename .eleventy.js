@@ -3,7 +3,30 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "css": "css" });
     eleventyConfig.addPassthroughCopy({ "js": "js" });
     eleventyConfig.addPassthroughCopy({ "assets": "assets" });
+    
+    // return config
+    
 
+    // Create a collection for all pieces
+    
+        // Create a collection for all pieces
+        eleventyConfig.addCollection("pieces", collection => {
+            return collection.getFilteredByGlob("./Pieces/**/*.njk");
+        });
+
+        // Collection grouped by category
+        eleventyConfig.addCollection("categories", collection => {
+            const pieces = collection.getFilteredByGlob("./Pieces/**/*.njk");
+            const categories = {};
+
+            for (let item of pieces) {
+                const cat = item.data.category || "Uncategorized";
+                if (!categories[cat]) categories[cat] = [];
+                categories[cat].push(item);
+            }
+
+            return categories;
+        });
     return {
         dir: {
             input: ".",
@@ -14,23 +37,5 @@ export default function(eleventyConfig) {
         htmlTemplateEngine: "njk"
     };
 
-    module.exports = function(eleventyConfig) {
-        // Create a collection for game-dev projects
-        eleventyConfig.addCollection("gameDevProjects", function(collectionApi) {
-            return collectionApi.getAll().filter(item => item.data.category === "game-dev");
-        });
-    };
 
-    eleventyConfig.addCollection("categories", collection => {
-        let categories = {};
-        collection.getAll().forEach(item => {
-            if (item.data.categories) {
-                item.data.categories.forEach(cat => {
-                    if (!categories[cat]) categories[cat] = [];
-                    categories[cat].push(item);
-                });
-            }
-        });
-        return categories;
-    });
-}
+};
