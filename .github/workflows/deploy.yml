@@ -1,9 +1,5 @@
 name: Build and Deploy Eleventy site
-  - name: Cache node_modules
-    uses: actions/cache@v4
-    with:
-      path: ~/.npm
-      key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+
 on:
   push:
     branches:
