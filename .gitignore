@@ -4,6 +4,7 @@ npm-debug.log*
 
 # Build output
 _site/
+_gamedev/index.html
 
 # System
 .DS_Store
