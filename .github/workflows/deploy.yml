@@ -3,7 +3,7 @@ name: Build and Deploy Eleventy site
 on:
   push:
     branches:
-      - main   # or your branch name, e.g. 11ty-restructure
+      - 11ty-restructure
 
 jobs:
   build-deploy:
@@ -29,3 +29,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _site
+
+- name: Cache node_modules
+  uses: actions/cache@v4
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
