@@ -1,9 +1,9 @@
-name: Build and Deploy Eleventy Demo Site
+name: Build and Deploy Eleventy site to main
 
 on:
   push:
     branches:
-      - 11ty-restructure  # your dev branch
+      - 11ty-restructure   # build whenever you push here
 
 jobs:
   build-deploy:
@@ -27,10 +27,10 @@ jobs:
       - name: Build Eleventy
         run: npx @11ty/eleventy
 
-      - name: Deploy to demo branch
+      - name: Deploy to main branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _site
-          publish_branch: 11ty-restructure-demo   # 👈 output branch for demo
-          force_orphan: true                      # keeps history clean
+          publish_branch: main   # ⬅️ pushes built site to main
+          force_orphan: true     # keeps commit history clean
