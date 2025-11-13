@@ -3,7 +3,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "css": "css" });
     eleventyConfig.addPassthroughCopy({ "js": "js" });
     eleventyConfig.addPassthroughCopy({ "assets": "assets" });
-    
+    eleventyConfig.addPassthroughCopy(".nojekyll");
     // return config
     
 
