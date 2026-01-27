@@ -45,5 +45,18 @@ document.querySelectorAll('.piece').forEach(piece => {
         let scrollPosition = window.scrollY / (document.body.scrollHeight - window.innerHeight);
         document.documentElement.style.setProperty("--background-color", `rgba(${0}, ${0}, ${0}, ${scrollPosition * .01})`);
     });
+        // Restore scroll position after reload
+        const savedScroll = sessionStorage.getItem("feedScroll");
+        if (savedScroll !== null) {
+        window.scrollTo(0, parseInt(savedScroll, 10));
+        sessionStorage.removeItem("feedScroll");
+    }
 
+        // Save scroll position before leaving
+        document.addEventListener("click", (e) => {
+        const link = e.target.closest("a[href*='?sort=']");
+        if (link) {
+        sessionStorage.setItem("feedScroll", window.scrollY);
+    }
+    });
 });

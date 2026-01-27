@@ -3,7 +3,10 @@ node_modules/
 npm-debug.log*
 
 # Build output
-_site/
+_site
+.cache
+.history
+node_modules
 
 # System
 .DS_Store

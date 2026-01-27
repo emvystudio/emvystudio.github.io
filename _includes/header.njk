@@ -1,7 +1,25 @@
         <h1>MATTHEW VELEZ</h1>
         <span>
-        <div class="p-tag tag-color-red">Artist</div>
+                <ul class="all-roles">
+                  {% for role in collections.projects | allRoles %}
+                    {% if role %}
+                    {% set key = role | normalizeRole %}
+                      {% set meta = roleRegistry[key] %}
+                      <li   
+                        class="role"
+                        {% if meta %}
+                        style="background: {{ meta.bg }}; color: {{ meta.color }};"
+                        {% endif %}
+                      >
+                    {{ meta.label if meta else Role }}
+                      </li>
+                    {% endif %}
+                {% endfor %}
+                  </ul>
+        <!--          
         <div class="p-tag tag-color-purple">Designer</div>
+        <div class="p-tag tag-color-red">Artist</div>
         <div class="p-tag tag-color-cyan">Writer</div>
-        <div class="p-tag tag-color-green">Strategist</div>
+        <div class="p-tag tag-color-green">Strategist</div> 
+        -->
         </span>

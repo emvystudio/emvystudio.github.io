@@ -15,13 +15,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/emvystudio/emvystudio.github.io/issues"
   },
   "homepage": "https://github.com/emvystudio/emvystudio.github.io#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2"
-  },
-  "type": "module"
+  }
 }
