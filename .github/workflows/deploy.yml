@@ -1,0 +1,36 @@
+name: Build and Deploy Eleventy site to main
+
+on:
+  push:
+    branches:
+      - main   # build whenever you push here
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Eleventy
+        run: npx @11ty/eleventy
+
+      - name: Deploy to main branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
+          publish_branch: main   # ⬅️ pushes built site to main
+          force_orphan: true     # keeps commit history clean

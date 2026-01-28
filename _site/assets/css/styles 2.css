@@ -1,148 +1,38 @@
 
-/* SITEWIDE FEATURES STYLING */
+
 html {
   overflow-x:hidden;
 
 }
 
-<<<<<<< Updated upstream:css/styles.css
-=======
 * {
   box-sizing: border-box;
   margin: 0;
   padding:0;
 }
 
-/* anchor tag styling */
-
->>>>>>> Stashed changes:assets/css/styles.css
 a:link {
   color: blue;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:visited {
   color:inherit;
 }
 
-<<<<<<< Updated upstream:css/styles.css
-=======
-a::after {
-    content: "]";
-}
-
-a:visited {
-    color: inherit;
-}
-
-a:hover {
-    color: inherit;
-    background-color: #e6ff00;
-  -webkit-transition: 2000ms;
-  transition: 200ms;
-  cursor: pointer;
-    cursor: pointer;
-}
-
-.feed-tags  a:hover {
-
-}
-.feed-item a:before {
-    content: none;
-}
-.feed-item a:after {
-    content: none;
-}
-
-
-/*.customlink a:visited {*/
-/*  text-align: center;*/
-/*    color: red;*/
-/*}*/
-
-/*.customlink a:hover{*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.customlink a:not(:hover) {*/
-/*  -webkit-transition: .5s;*/
-/*  transition: .5s;*/
-/*}*/
-
-.phone a:hover{
-  color: rgba(22,155,66,1);
-}
-
-/*.discord a:hover{*/
-/*  color: rgba(126,13,173,1);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.arena a:hover{*/
-/*  color: rgba(10,10,155,1);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.itch a:hover{*/
-/*  color: rgba(204, 18, 68, 1);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-
-.email a:hover{
-  color: rgba(255,13,73,1);
-}
-
-/*.substack a:hover{*/
-/*  color: rgba(245,40,145,1);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-/*.soundcloud a:hover{*/
-/*  color: rgb(245, 139, 40);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-/*section a:hover{*/
-/*  color: rgba(155,255,255,1);*/
-/*  -webkit-transition: .2s;*/
-/*  transition: .2s;*/
-/*  -webkit-transform: -30px .5s;*/
-/*  transform: -30px .5s;*/
-/*  cursor: pointer;*/
-/*}*/
-
->>>>>>> Stashed changes:assets/css/styles.css
 body{
   font-family: helvetica;
-  font-style: bold;
+  font-weight: bold;
   font-size: 10pt;
-/*  padding: 1vh 1vw; */
+  padding: 1vmin; 
   margin: 0;
   cursor:crosshair;
+  background-color: var(--background-color);
 }
+
+:root {
+  --background-color: white;
+} 
 
 p {
   font-size: 1.25em;
@@ -151,39 +41,29 @@ p {
 }
 
 ul{
-  font-size: 1.25em;
-  line-height: 1.25em;
+  font-size: 1.5em;
+  line-height: 1.55em;
   margin: 0;
-  padding-bottom: 1em;
-  padding-left: 1.5rem;
-}
-
-footer  {
-  text-align: center;
-  color: rgba(177,177,177,1);
-  margin: auto;
-  padding: 3vh 0;
-  position: fixed;
-  z-index:3;
-  bottom:0;
-  right:0;
-  left: 0;
+  /*padding-bottom: 1em;*/
+  /*padding-left: 1.5rem;*/
+    list-style-type: none;
 }
 
 h1  {
   font-style: normal;
   font-variant: inherit;
   font-size: 6.5em;
-  font-kerning: 1em;
+  font-kerning: auto;
   line-height: 1em;
-  margin: auto;
+  /*margin: auto;*/
   text-transform: uppercase;
 }
 
 h2  {
   display: flex;
-  font-size: 5em;
+  font-size: clamp(2rem, -0.875rem + 81.333vw, 5rem);
   font-weight: bold;
+    line-height: 4rem;
   margin: 10px 0px;
   color: rgba(10, 10, 10, 1);
 }
@@ -195,30 +75,6 @@ h3  {
   color: rgba(10, 10, 10, 1);
 }
 
-@media (min-width:1600px) {
-  h1  {
-  font-size: 8.5em;
-  }
-}
-
-@media (max-width:1100px) {
-  h1  {
-  font-size: 6em;
-  }
-}
-
-@media (max-width:640px) {
-  h1  {
-  font-size: 5em;
-  }
-}
-
-@media (max-width:640px) {
-  iframe  {
-    width: 100vw;
-    height: 100vh;
-  }
-}
 
 h1:hover  {
   color: green;
@@ -325,12 +181,8 @@ iframe  {
   flex-wrap: wrap;
 }
 
-<<<<<<< Updated upstream:css/styles.css
-
 /*custom ids*/
 
-=======
->>>>>>> Stashed changes:assets/css/styles.css
 .bracket-adjust  {
   margin: -10px;
 }
@@ -361,35 +213,16 @@ iframe  {
       width: 100%;
       z-index: 5;
       top: 0;
-      /*background-color: inherit;*/
-      backdrop-filter:  blur(8px);
-      -webkit-backdrop-filter:  blur(8px);
       /*margin: 0em 1em 0em 1em;*/
     }
 
-  nav  {
-      display: flex;
-      flex-direction: row;
-      padding: .25rem;
-      gap: .25rem;
-      margin: auto;
-  }
-  
-  
   .nav-item
     {
       font-weight: bold;
-<<<<<<< Updated upstream:css/styles.css
       margin: 1rem 0;
-      padding: 0em 1.5rem;
       position: fixed;
       z-index: 5;
       top: 0;
-=======
-      /*margin: 1rem 0;*/
-      /*position: fixed;*/
-      /*top: 0;*/
->>>>>>> Stashed changes:assets/css/styles.css
     }
 
     #home
@@ -413,6 +246,9 @@ a.portfolio:hover .body {
     animation: bodycolor 1s infinite alternate;
   }
   
+.categories {
+    margin: 1vmax;
+}
 
 @-webkit-keyframes bodycolor {
   0% {
@@ -486,32 +322,45 @@ a.portfolio:hover .body {
   }
 }
 
-
 .panel {
   display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-  justify-content: center;
+  flex: 4 0 auto;
   flex-direction: column;
-  margin: auto 0 auto 5vw;
+  justify-content: space-between;
+  margin: auto;
+  padding: 10vmin;
   top: 0;
   position: fixed;
   z-index: 3;
-  height: 100vh;
+  height: 100%;
 }
-
 
 .header
   {
-    margin: 0px 0px;
-    padding: 44px 0px;
+  margin: auto 0;
+  /*padding: 44px 0px;*/
+  display: flex;
+  flex-direction: column;
+  /*flex-grow: 3;*/
+  justify-content: center;
+    gap: .25rem;
+    width: 65%;
+}
 
-  }
+footer  {
+  text-align: left;
+  color: rgba(177,177,177,1);
+  z-index:4;
+  /*padding: 5% 0;*/
+  margin: 0 0;
+  bottom: 0;
+  /*display: flex;*/
+  /*flex-grow: 1;*/
+}
 
 .bio  {
   width: 34vw;
   margin: 5em 0 5em 0;
-
 }
 
 .game {
@@ -521,27 +370,24 @@ a.portfolio:hover .body {
 .gallery
   {
     position: relative;
-    max-width: auto;
-    max-height: auto;
+    /*max-width: 100vw;*/
+    /*min-width: 60vw;*/
+    /*!*max-height: auto;*!*/
+    /*display: flex;*/
     z-index: 4;
-<<<<<<< Updated upstream:css/styles.css
-    margin: 90vh 0 0 36%;
-    padding: 2vh 0;
-=======
     display: flex;
     flex-direction: column;
     gap: 1rem;
     margin-top: 90vh;
     margin-left: calc(100vw/5*2);
-    padding: 2vmin 5vmin 0vmin 0vmin;
->>>>>>> Stashed changes:assets/css/styles.css
+    padding: 2vh 0;
     align-content: center;
     backdrop-filter:  blur(8px);
     -webkit-backdrop-filter:  blur(8px);
   }
 
 .piece  {
-  padding: 6vh 4vw;
+  padding: 5vmin 0;
   max-width: 100vw;
   background: none;
   background-size: cover;
@@ -551,19 +397,13 @@ a.portfolio:hover .body {
 
 .piece:hover {
   transition: background-image .0s;
-    transition: 200ms;
-    -webkit-transition: 200ms;
-    background-color: rgba(230, 255, 0, 0.5);
+ 
 }
 
 .piece:hover h2, .piece:hover h3 {
-<<<<<<< Updated upstream:css/styles.css
   transition: .0s;
   -webkit-transition: .0s;
-  color: white;
-=======
-
->>>>>>> Stashed changes:assets/css/styles.css
+  color: #0000ffff;
 }
 
 .stub {
@@ -642,17 +482,15 @@ embed  {
   height: 50vh;
   border: none;
 }
-@media (max-width:1080px)
-  {
-    .grid
-    {
-    flex-direction:column;
-    }
-  }
+ 
+
+.pos-relative {
+  position: relative;
+}
 
 
 .p-tag  {
-      display: inline-block;
+      display: inline-flex;
       text-align: center;
       text-transform: uppercase;
       font-size: 1rem;
@@ -660,7 +498,7 @@ embed  {
    /*   text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; */
       border-radius: 30px;
       padding: 1rem;
-      margin: 1rem .25rem;
+      margin: .25rem 0;
       color: rgb(255, 255, 255);
   background-color: rgb(187, 187, 187);
 }
@@ -697,7 +535,6 @@ embed  {
   background-color: rgb(208, 84, 16);
 }
 
-
 img {
   width: 100%;
   height: auto;
@@ -731,14 +568,18 @@ img {
 
 /* anchor tag edits */
 
+.linkgrid {
+  width: 50%;
+}
+
 .customlink {
-  position: relative;
+  /*display: inline-grid;*/
 }
 
 
 .customlink a
   {
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: black;
   font-weight: bold;
   text-decoration: none
@@ -746,16 +587,6 @@ img {
 
 .linksmall {
   font-size: .5em;
-}
-
-<<<<<<< Updated upstream:css/styles.css
-@media (max-width:640px)  {
-.customlink a {
-  font-size: 1em;
-  color: black;
-  font-weight: bold;
-  text-decoration: none
-  }
 }
 
 .customlink a:visited {
@@ -840,16 +671,7 @@ section a:hover{
   cursor: pointer;
 }
 
-@media (max-width:640px){
-  .customlink{
-    font-size: 1em;}
-  iframe{
-    width:100vw;
-    height:auto;
-  }
-}
-=======
->>>>>>> Stashed changes:assets/css/styles.css
+
 
 /* tooltips */
 
@@ -889,7 +711,7 @@ section a:hover{
     max-height: auto;
     z-index: 4;
     padding: 0;
-    margin: 88vh 0 0 0;
+    top:95vh;
     align-content: center;
     backdrop-filter:  blur(8px);
     -webkit-backdrop-filter:  blur(8px);
@@ -969,13 +791,13 @@ section a:hover{
   {
     display: flex;
     flex-direction: column;
-    position:sticky;
+    position: relative;
     top: 0;
     gap: 2em;
     padding: 10vh 3vw 10vh 5vw;
     background-color: white;
     z-index: 5;
-    height: 100vh;
+    /*height: 100vh;*/
   }
 
 #projects-nav
@@ -990,7 +812,7 @@ section a:hover{
 .p-nav
   { 
     z-index: 6;
-    position: relative;
+    position: sticky;
     display: flex;
     flex-direction: row;
     gap: 3em;
@@ -1068,8 +890,6 @@ section a:hover{
     opacity: 0.5;
   }
 
-<<<<<<< Updated upstream:css/styles.css
-=======
 /* CATEGORY STYLING */
 
 .category-tile {
@@ -1098,10 +918,6 @@ section a:hover{
         /*gap: 1em;*/
     }
     .feed-tags  {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: .25rem;
     }
 
     .feed-list {
@@ -1116,7 +932,7 @@ section a:hover{
         background-position: center;
         background-repeat: no-repeat;
         transition: background-image 0.6s ease;
-        margin: 2vmin;
+        margin: 3vmin 0;
     }
     
     .feed-sort  {
@@ -1164,14 +980,6 @@ section a:hover{
 /*    white-space: nowrap;*/
 /*}*/
 
-.all-roles  {
-    display: flex;
-    flex-direction: row;
-    gap: .25rem;
-    flex-wrap: wrap;
-}
-
->>>>>>> Stashed changes:assets/css/styles.css
 /* PORTFOLIO ITEMS */
 
 .pileup
@@ -1249,10 +1057,6 @@ section a:hover{
   max-width: 30vw;
 }
 
-<<<<<<< Updated upstream:css/styles.css
-  @media (max-width:640px) 
-  {
-=======
 
 /* MEDIA QUERY */
 /* MIN WIDTH */
@@ -1283,9 +1087,6 @@ section a:hover{
     iframe{
         width:100vw;
         height:auto;
-    }
-    .feed-tags  {
-        gap: 1rem;
     }
 }
 
@@ -1332,65 +1133,62 @@ section a:hover{
         text-decoration: none
     }
 
->>>>>>> Stashed changes:assets/css/styles.css
     .gallery
     {
-      position: relative;
-      max-width: auto;
-      max-height: auto;
-      z-index: 4;
-      margin: 100vh 0 0 0;
-      align-content: center;
+        position: relative;
+        max-width: auto;
+        max-height: auto;
+        z-index: 4;
+        margin: 100vh 0 0 0;
+        align-content: center;
+    }
+    
+    .panel  {
+        padding: 1vw;
+    }
+    .header {
+        min-width: 100vw;
     }
 
     .hero{
-    order: -1;
+        order: -1;
     }
-    
+
     .mobile{
-      display: inline;
+        display: inline;
     }
 
     .p-title  {
-      font-size: 3em;
+        font-size: 3em;
     }
-    
+
     .p-nav{
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .top-fold{
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .column_container{
-      flex-direction: column;
+        flex-direction: column;
     }
 
     #projects-nav{
-      justify-content: center;
-      text-align: center;
-    }
-
-    .bio {
-      width:90%;
-    }
-
-    .game {
-      margin: 2em 2vw;
+        justify-content: center;
+        text-align: center;
     }
 
     .row{
-      flex-direction: column;
+        flex-direction: column;
     }
     .card-container{
-      width: 60%;
-      height: 50px;
+        width: 60%;
+        height: 50px;
     }
 
     .footer{
-      position: relative;
+        position: relative;
     }
+}
 
-
-  }

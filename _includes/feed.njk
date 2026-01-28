@@ -1,0 +1,82 @@
+
+<div class="gallery" id="gallery">
+      <div class="nav-item">
+          <a href="#gallery">
+           PORTFOLIO
+          </a>
+      </div>
+    
+    <section class="feed">
+    
+      {# TOP BAR #}
+      <div class="feed-header">
+        <div class="feed-modes">
+            <nav class="feed-sort">
+                <span>sort</span>
+                {% set reverse = eleventy.query.order == "asc" %}
+                {% if reverse %}
+                  {% set feed = feed | reverse %}
+                {% endif %}
+                <a href="?sort=date" class="{% if sort == 'date' %}active{% endif %}">Date</a>
+                <a href="?sort=title" class="{% if sort == 'title' %}active{% endif %}">A–Z</a>
+                <a href="?sort=category" class="{% if sort == 'category' %}active{% endif %}">Category</a>
+            </nav>
+                   
+            {% set sort = eleventy.query.sort or "date" %}
+            {% if sort == "title" %}
+              {% set feed = collections.projectsByTitle %}
+            {% elif sort == "category" %}
+              {% set feed = collections.projectsByCategory %}
+            {% else %}
+              {% set feed = collections.projectsByDate %}
+            {% endif %}
+
+            
+        </div>
+
+        <div class="feed-count">
+            <span class="active">all</span>
+          {{ collections.projects | length }}
+        </div>
+        
+      </div>
+    
+      {# TAG LIST #}
+    <div class="feed-tags">
+      {% for tag in collections | allTags %}
+        <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+      {% endfor %}
+    </div>
+      {# FEED LIST #}
+      <div class="feed-list">
+        {% for project in feed %}   
+        <div class="piece">         
+            <article class="feed-item">
+              <h3>{{ project.data.category }}</h3>
+              <a href="{{ project.url }}">
+                <h2>{{ project.data.title }}</h2>
+              </a>
+                {% if project.data.skills and project.data.skills | length %}
+                  <ul class="skills">
+                    {% for rawSkill in project.data.skills %}
+                      {% set key = rawSkill | normalizeSkill %}
+                      {% set meta = skillRegistry[key] %}
+                    
+                      <li   
+                        class="skill"
+                        {% if meta %}
+                        style="background: {{ meta.bg }}; color: {{ meta.color }};"
+                        {% endif %}
+                      >
+                        {{ meta.label if meta else rawSkill }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+            </article>
+            </div>
+        {% endfor %}
+      </div>
+    
+    </section>
+</div>
