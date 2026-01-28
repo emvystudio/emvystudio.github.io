@@ -1,6 +1,10 @@
 
 <div class="gallery" id="gallery">
-      <a href="#gallery"><div class="nav-item">[PORTFOLIO]</div></a>
+      <div class="nav-item">
+          <a href="#gallery">
+           PORTFOLIO
+          </a>
+      </div>
     
     <section class="feed">
     
@@ -13,9 +17,9 @@
                 {% if reverse %}
                   {% set feed = feed | reverse %}
                 {% endif %}
-                <a href="?sort=date">Date</a>
-                <a href="?sort=title">A–Z</a>
-                <a href="?sort=category">Category</a>
+                <a href="?sort=date" class="{% if sort == 'date' %}active{% endif %}">Date</a>
+                <a href="?sort=title" class="{% if sort == 'title' %}active{% endif %}">A–Z</a>
+                <a href="?sort=category" class="{% if sort == 'category' %}active{% endif %}">Category</a>
             </nav>
             
             <span class="active">all</span>
@@ -41,7 +45,7 @@
       {# TAG LIST #}
     <div class="feed-tags">
       {% for tag in collections | allTags %}
-        <a href="/tags/{{ tag | slug }}/">[{{ tag }}]</a>
+        <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
       {% endfor %}
     </div>
       {# FEED LIST #}
