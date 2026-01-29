@@ -1,0 +1,87 @@
+<h1>RECOVERY GUIDE — Emvy Studio Eleventy Site</h1>
+<p>This document is for <strong>when things go wrong</strong>.
+Follow steps in order. Do not skip ahead.</p>
+<hr>
+<h2>🚨 First Rule: Stop and Check State</h2>
+<pre><code class="language-bash">git branch --show-current
+git status
+</code></pre>
+<p>If you are not on <code>11ty-restructure</code>, switch back immediately:</p>
+<pre><code class="language-bash">git checkout 11ty-restructure
+</code></pre>
+<hr>
+<h2>🔍 Find a Known-Good Commit</h2>
+<pre><code class="language-bash">git log --oneline
+</code></pre>
+<p>Identify the last commit where:</p>
+<ul>
+<li>CSS was correct</li>
+<li>Local preview worked</li>
+<li>No merge conflict markers existed</li>
+</ul>
+<hr>
+<h2>⏪ Hard Restore to Known-Good Commit</h2>
+<pre><code class="language-bash">git reset --hard &lt;commit-hash&gt;
+</code></pre>
+<p>⚠️ This discards local changes.</p>
+<hr>
+<h2>🧹 Clean the Build Environment</h2>
+<pre><code class="language-bash">rm -rf _site
+rm -rf node_modules
+npm ci
+npx @11ty/eleventy
+</code></pre>
+<p>Verify locally:</p>
+<pre><code class="language-bash">npm start
+</code></pre>
+<hr>
+<h2>🧪 Check for Merge Conflict Markers</h2>
+<p>Search for these strings:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</code></pre>
+<p>Especially in:</p>
+<ul>
+<li>assets/css/styles.css</li>
+<li>templates</li>
+<li>includes</li>
+</ul>
+<p>If found, the file is broken until fixed.</p>
+<hr>
+<h2>💾 Create Emergency Backup Branch</h2>
+<pre><code class="language-bash">git checkout -b recovery-backup-YYYY-MM-DD
+git push origin recovery-backup-YYYY-MM-DD
+</code></pre>
+<p>This preserves the restored state.</p>
+<hr>
+<h2>🚀 Redeploy Correct State</h2>
+<pre><code class="language-bash">git checkout 11ty-restructure
+git push origin 11ty-restructure --force
+</code></pre>
+<p>Then verify GitHub Actions completes successfully.</p>
+<hr>
+<h2>🛑 What NOT To Do During Recovery</h2>
+<ul>
+<li>Do NOT merge branches</li>
+<li>Do NOT edit <code>_site/</code></li>
+<li>Do NOT change workflows</li>
+<li>Do NOT panic-push to main</li>
+</ul>
+<hr>
+<h2>🧠 If All Else Fails</h2>
+<ol>
+<li>Clone repo fresh</li>
+<li>Checkout <code>11ty-restructure</code></li>
+<li>Reset to known-good commit</li>
+<li>Rebuild</li>
+<li>Deploy</li>
+</ol>
+<hr>
+<h2>✅ Recovery Complete When:</h2>
+<ul>
+<li>Local preview matches expected</li>
+<li>No conflict markers exist</li>
+<li>GitHub Actions passes</li>
+<li>Live site matches local build</li>
+</ul>
