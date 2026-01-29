@@ -3,7 +3,7 @@ name: Build and Deploy Eleventy site to main
 on:
   push:
     branches:
-      - main   # build whenever you push here
+      - 11ty-restructure   # build whenever you push here
 
 jobs:
   build-deploy:
