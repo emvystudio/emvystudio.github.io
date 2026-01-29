@@ -1,18 +1,17 @@
 
 <div class="gallery" id="gallery">
-      <div class="nav-item">
+<nav>
           <a href="#gallery">
            PORTFOLIO
           </a>
-      </div>
-    
+</nav>    
     <section class="feed">
     
       {# TOP BAR #}
       <div class="feed-header">
         <div class="feed-modes">
             <nav class="feed-sort">
-                <span>sort</span>
+                <span style="color:grey">sort</span>
                 {% set reverse = eleventy.query.order == "asc" %}
                 {% if reverse %}
                   {% set feed = feed | reverse %}
