@@ -1,0 +1,10 @@
+{
+  "designer": { "label": "Designer", "bg": "#C2185B", "color": "#FFFFFF" },
+  "artist": { "label": "Artist", "bg": "#EC407A", "color": "#FFFFFF" },
+  "composer": { "label": "Composer", "bg": "#512DA8", "color": "#FFFFFF" },
+  "developer": { "label": "Developer", "bg": "#0D47A1", "color": "#FFFFFF" },
+  "creator": { "label": "Creator", "bg": "#4DB6AC", "color": "#FFFFFF" },
+  "writer": { "label": "Writer", "bg": "#239120", "color": "#FFFFFF" },
+  "copywriter": { "label": "Copywriter", "bg": "#F57C00", "color": "#000000" },
+  "strategist": { "label": "Strategist", "bg": "#009688", "color": "#FFFFFF" }
+}

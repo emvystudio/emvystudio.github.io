@@ -1,0 +1,21 @@
+<div class="gallery" id="gallery">
+      <a href="#gallery"><div class="nav-item">[PORTFOLIO]</div></a>
+<section class="categories">
+  <ul class="category-list">
+    {% for category, data in collections.categories %}
+<li
+  class="category-tile"
+  {% if data.heroImages and data.heroImages | length %}
+    data-images="{{ data.heroImages | join(',') }}"
+  {% endif %}
+>
+  <a href="/{{ category | slug }}/">
+    <h2>{{ category }}</h2>
+    <p>{{ data.items | length }} projects</p>
+  </a>
+</li>
+    {% endfor %}
+  </ul>
+</section>
+    </div>
+</div>

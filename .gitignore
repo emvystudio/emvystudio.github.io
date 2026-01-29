@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Build output
+_site
+.cache
+.history
+node_modules
+
+# System
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.log
+*.tmp
